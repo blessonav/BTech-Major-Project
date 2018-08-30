@@ -1,0 +1,219 @@
+runspec v6674 started at Tue Apr 21 15:38:46 2015 on "blesson-Inspiron-7420"
+runspec is: /home/blesson/cpu200/bin/runspec
+runspec: runspec --config=fin2.cfg --size=ref --reportable --tune=base,peak --iterations=3 --output_format=pdf fp
+toolset: linux-suse10-amd64
+
+Locating benchmarks...found 31 benchmarks in 6 benchsets.
+Reading config file '/home/blesson/cpu200/config/fin2.cfg'
+Running "specperl /home/blesson/cpu200/Docs/sysinfo" to gather system information.
+Read 62 total lines from the sysinfo program.
+Read 61 usable lines from the sysinfo program.
+
+Loading "http://www.spec.org/auto/cpu2006/current_version" for version check: OK
+Reportable runs must include a 'test' run; adding to run list
+Reportable runs must include a 'train' run; adding to run list
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml)...
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-linux-platform-revA.xml)...
+Verbosity = 5
+Action    = validate
+Tune      = base,peak
+Ext       = gcc43-64bit
+Size      = test,train,ref
+Machine   = default
+benchmarks= 410.bwaves,416.gamess,433.milc,434.zeusmp,435.gromacs,436.cactusADM,437.leslie3d,444.namd,447.dealII,450.soplex,453.povray,454.calculix,459.GemsFDTD,465.tonto,470.lbm,481.wrf,482.sphinx3,998.specrand
+outputs   = pdf
+username  = blesson
+Benchmarks selected: 410.bwaves, 416.gamess, 433.milc, 434.zeusmp, 435.gromacs, 436.cactusADM, 437.leslie3d, 444.namd, 447.dealII, 450.soplex, 453.povray, 454.calculix, 459.GemsFDTD, 465.tonto, 470.lbm, 481.wrf, 482.sphinx3, 998.specrand
+
+Notice: Errors may not be ignored for reportable runs.
+Compiling Binaries
+
+------------------------------------------------------------------------
+  Up to date 410.bwaves base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 416.gamess base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 433.milc base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 434.zeusmp base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 435.gromacs base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 436.cactusADM base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 437.leslie3d base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 444.namd base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 447.dealII base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 450.soplex base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 453.povray base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 454.calculix base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 459.GemsFDTD base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 465.tonto base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 470.lbm base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 481.wrf base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 482.sphinx3 base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 998.specrand base gcc43-64bit default
+
+
+Setting Up Run Directories
+  Setting up 410.bwaves test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 416.gamess test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 433.milc test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 434.zeusmp test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 435.gromacs test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 436.cactusADM test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 437.leslie3d test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 444.namd test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 447.dealII test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 450.soplex test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 453.povray test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 454.calculix test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 459.GemsFDTD test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 465.tonto test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 470.lbm test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 481.wrf test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 482.sphinx3 test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+  Setting up 998.specrand test base gcc43-64bit default: existing (run_base_test_gcc43-64bit.0000)
+
+-----------------------------------
+Running Benchmarks
+
+-----------------------------------
+  Running 410.bwaves test base gcc43-64bit default
+Commands to run:
+    -b numactl -m 0 --physcpubind=0
+    -C /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000
+    -e bwaves.err ../run_base_test_gcc43-64bit.0000/bwaves_base.gcc43-64bit (timed)
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Issuing command '/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q'
+/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Start command: Tue Apr 21 15:38:55 2015 (1429610935)
+Stop command: Tue Apr 21 15:39:08 2015 (1429610948)
+Elapsed time for command: 00:00:13 (13)
+Workload elapsed time (0:1) = 5.572663 seconds
+Copy 0 of 410.bwaves (base test) run 1 finished at Tue Apr 21 15:39:00 2015.  Total elapsed time: 5.572663
+comparing files in '/home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000'
+comparing 'bwaves.out' with abstol=1e-16, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+comparing 'bwaves2.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=0.015, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+comparing 'bwaves3.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=1e-06, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Issuing command '/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd'
+/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Start command: Tue Apr 21 15:39:09 2015 (1429610949)
+Stop command: Tue Apr 21 15:39:10 2015 (1429610950)
+Elapsed time for command: 00:00:01 (1)
+Benchmark Times:
+  Start:    Tue Apr 21 15:38:55 2015 (1429610935)
+  Stop:     Tue Apr 21 15:39:08 2015 (1429610948)
+  Elapsed:  00:00:13 (13)
+  Reported: 5 572786000 5.572786
+ Success 410.bwaves base test ratio=-0.00, runtime=5.572786, power=0.00w, temp=0.00 deg, humidity=0.00%
+
+-----------------------------------
+  Running 416.gamess test base gcc43-64bit default
+Commands to run:
+    -b numactl -m 0 --physcpubind=0
+    -C /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000
+    -i exam29.config -o exam29.out -e exam29.err ../run_base_test_gcc43-64bit.0000/gamess_base.gcc43-64bit (timed)
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Issuing command '/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q'
+/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Start command: Tue Apr 21 15:39:10 2015 (1429610950)
+Stop command: Tue Apr 21 15:39:10 2015 (1429610950)
+Elapsed time for command: 00:00:00 (0)
+Workload elapsed time (0:1) = 0.029846 seconds
+Copy 0 of 416.gamess (base test) run 1 finished at Tue Apr 21 15:39:10 2015.  Total elapsed time: 0.029846
+comparing files in '/home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000'
+comparing 'exam29.out' with abstol=1e-05, binary=, calctol=0, cw=, floatcompare=, ignorecase=1, obiwan=, reltol=0.0001, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Issuing command '/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd'
+/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Start command: Tue Apr 21 15:39:10 2015 (1429610950)
+Stop command: Tue Apr 21 15:39:11 2015 (1429610951)
+Elapsed time for command: 00:00:01 (1)
+
+****************************************
+Contents of exam29.err
+****************************************
+STOP IN ABRT
+
+****************************************
+
+*** Miscompare of exam29.out; for details see
+    /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000/exam29.out.mis
+0423:     1  0  0     -228.438026762  -228.438026762   0.585016182   0.000000000
+          1  0  0     -228.438026762  -228.438026762   2.057216987   0.000000000
+                                                                 ^
+0424:            ---------------START SECOND ORDER SCF---------------
+          2  1  0      -13.398272306   215.039754456   0.019611730   2.138165837
+       ^
+0425:     2  1  0     -228.975183270    -0.537156507   0.141897260   0.111481465
+                 ---------------START SECOND ORDER SCF---------------
+       ^
+0426:     3  2  0     -229.014081256    -0.038897986   0.064028396   0.079634004
+          3  2  0      -13.404086244    -0.005813938   0.000644098   0.008801378
+                                   ^
+0427:     4  3  0     -229.036210679    -0.022129423   0.025840433   0.007697238
+          4  3  0      -13.404093666    -0.000007422   0.000028154   0.000448854
+                                   ^
+0428:     5  4  0     -229.036777024    -0.000566345   0.008639408   0.001874192
+          5  4  0      -13.404093683    -0.000000017   0.000000370   0.000004470
+                                   ^
+0429:     6  5  0     -229.036824895    -0.000047871   0.001734717   0.000979860
+          6  5  0      -13.404093683    -0.000000000   0.000000008   0.000000051
+                                   ^
+0431:     7  6  0     -229.036831711    -0.000006816   0.000315932   0.000297576
+                 -----------------
+       ^
+0432:     8  7  0     -229.036832335    -0.000000624   0.000112760   0.000083271
+                 DENSITY CONVERGED
+       ^
+0433:     9  8  0     -229.036832426    -0.000000092   0.000074046   0.000042607
+                 -----------------
+       ^
+Benchmark Times:
+  Start:    Tue Apr 21 15:39:10 2015 (1429610950)
+  Stop:     Tue Apr 21 15:39:10 2015 (1429610950)
+  Elapsed:  00:00:00 (0)
+  Reported: 0 30021000 0.030021
+ Error 416.gamess base test ratio=-0.00, runtime=0.030021, power=0.00w, temp=0.00 deg, humidity=0.00%
+Invalid run; unable to continue.
+
+The log for this run is in /home/blesson/cpu200/result/CPU2006.008.log
+The debug log for this run is in /home/blesson/cpu200/result/CPU2006.008.log.debug
+
+*
+* Temporary files were NOT deleted; keeping temporaries such as
+* /home/blesson/cpu200/result/CPU2006.008.log.debug and
+* /home/blesson/cpu200/tmp/CPU2006.008
+* (These may be large!)
+*
+runspec finished at Tue Apr 21 15:39:11 2015; 25 total seconds elapsed

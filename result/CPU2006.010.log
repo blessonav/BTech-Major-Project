@@ -1,0 +1,85 @@
+runspec v6674 started at Wed Apr 22 20:03:45 2015 on "blesson-Inspiron-7420"
+runspec is: /home/blesson/cpu200/bin/runspec
+runspec: runspec --config=fin1.cfg --action=build --tune=base int
+toolset: linux-suse10-amd64
+
+Locating benchmarks...found 31 benchmarks in 6 benchsets.
+Reading config file '/home/blesson/cpu200/config/fin1.cfg'
+Running "specperl /home/blesson/cpu200/Docs/sysinfo" to gather system information.
+Read 62 total lines from the sysinfo program.
+Read 61 usable lines from the sysinfo program.
+
+Loading "http://www.spec.org/auto/cpu2006/current_version" for version check: failed
+
+Notice: Suite version checking failed; got
+  500 Can't connect to www.spec.org:80 (Bad hostname 'www.spec.org')
+
+          A connection to the internet is useful, but is NOT required
+          in order to run CPU2006.  If one is available, several
+          components will be checked to see if they are current.  If
+          you need to use an HTTP proxy to access the Internet, please
+          see the 'http_proxy' entry in config.html.
+
+                       ----------------------------------
+                       The run will continue in 5 seconds
+                       ----------------------------------
+
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml)...
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-linux-platform-revA.xml)...
+Verbosity = 5
+Action    = build
+Tune      = base
+Ext       = gcc43-64bit
+Size      = ref
+Machine   = default
+benchmarks= 400.perlbench,401.bzip2,403.gcc,429.mcf,445.gobmk,456.hmmer,458.sjeng,462.libquantum,464.h264ref,471.omnetpp,473.astar,483.xalancbmk,999.specrand
+outputs   = asc,csv,html,pdf
+username  = blesson
+Benchmarks selected: 400.perlbench, 401.bzip2, 403.gcc, 429.mcf, 445.gobmk, 456.hmmer, 458.sjeng, 462.libquantum, 464.h264ref, 471.omnetpp, 473.astar, 483.xalancbmk, 999.specrand
+Compiling Binaries
+
+------------------------------------------------------------------------
+  Up to date 400.perlbench base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 401.bzip2 base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 403.gcc base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 429.mcf base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 445.gobmk base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 456.hmmer base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 458.sjeng base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 462.libquantum base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 464.h264ref base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 471.omnetpp base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 473.astar base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 483.xalancbmk base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 999.specrand base gcc43-64bit default
+
+
+Build Complete
+
+The log for this run is in /home/blesson/cpu200/result/CPU2006.010.log
+
+runspec finished at Wed Apr 22 20:03:59 2015; 14 total seconds elapsed

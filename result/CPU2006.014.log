@@ -1,0 +1,155 @@
+runspec v6674 started at Thu Apr 23 01:37:36 2015 on "blesson-Inspiron-7420"
+runspec is: /home/blesson/cpu200/bin/runspec
+runspec: runspec --config=fin1.cfg --size=ref --noreportable --tune=base,peak --iterations=3 --output_format=pdf 400.perlbench
+toolset: linux-suse10-amd64
+
+Locating benchmarks...found 31 benchmarks in 6 benchsets.
+Reading config file '/home/blesson/cpu200/config/fin1.cfg'
+Running "specperl /home/blesson/cpu200/Docs/sysinfo" to gather system information.
+Read 62 total lines from the sysinfo program.
+Read 61 usable lines from the sysinfo program.
+
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml)...
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-linux-platform-revA.xml)...
+Verbosity = 5
+Action    = validate
+Tune      = base,peak
+Ext       = gcc43-64bit
+Size      = ref
+Machine   = default
+benchmarks= 400.perlbench
+outputs   = pdf
+username  = blesson
+Benchmarks selected: 400.perlbench
+Compiling Binaries
+
+------------------------------------------------------------------------
+  Up to date 400.perlbench base gcc43-64bit default
+
+
+Setting Up Run Directories
+  Setting up 400.perlbench ref base gcc43-64bit default: existing (run_base_ref_gcc43-64bit.0000)
+
+-----------------------------------
+Running Benchmarks
+
+-----------------------------------
+  Running (#1) 400.perlbench ref base gcc43-64bit default
+Commands to run:
+    -b numactl -m 0 --physcpubind=0
+    -C /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000
+    -o checkspam.2500.5.25.11.150.1.1.1.1.out -e checkspam.2500.5.25.11.150.1.1.1.1.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib checkspam.pl 2500 5 25 11 150 1 1 1 1 (timed)
+    -o diffmail.4.800.10.17.19.300.out -e diffmail.4.800.10.17.19.300.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib diffmail.pl 4 800 10 17 19 300 (timed)
+    -o splitmail.1600.12.26.16.4500.out -e splitmail.1600.12.26.16.4500.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib splitmail.pl 1600 12 26 16 4500 (timed)
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Issuing command '/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q'
+/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Start command: Thu Apr 23 01:37:43 2015 (1429733263)
+Stop command: Thu Apr 23 01:43:16 2015 (1429733596)
+Elapsed time for command: 00:05:33 (333)
+Workload elapsed time (0:1) = 175.725003 seconds
+Workload elapsed time (0:2) = 58.258229 seconds
+Workload elapsed time (0:3) = 90.904043 seconds
+Copy 0 of 400.perlbench (base ref) run 1 finished at Thu Apr 23 01:43:08 2015.  Total elapsed time: 324.887275
+comparing files in '/home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000'
+comparing 'checkspam.2500.5.25.11.150.1.1.1.1.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+comparing 'diffmail.4.800.10.17.19.300.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+comparing 'splitmail.1600.12.26.16.4500.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Issuing command '/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd'
+/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Start command: Thu Apr 23 01:43:16 2015 (1429733596)
+Stop command: Thu Apr 23 01:43:18 2015 (1429733598)
+Elapsed time for command: 00:00:02 (2)
+Benchmark Times:
+  Start:    Thu Apr 23 01:37:43 2015 (1429733263)
+  Stop:     Thu Apr 23 01:43:16 2015 (1429733596)
+  Elapsed:  00:05:33 (333)
+  Reported: 324 887395000 324.887395
+ Success 400.perlbench base ref ratio=30.07, runtime=324.887395, power=0.00w, temp=0.00 deg, humidity=0.00%
+
+-----------------------------------
+  Running (#2) 400.perlbench ref base gcc43-64bit default
+Commands to run:
+    -b numactl -m 0 --physcpubind=0
+    -C /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000
+    -o checkspam.2500.5.25.11.150.1.1.1.1.out -e checkspam.2500.5.25.11.150.1.1.1.1.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib checkspam.pl 2500 5 25 11 150 1 1 1 1 (timed)
+    -o diffmail.4.800.10.17.19.300.out -e diffmail.4.800.10.17.19.300.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib diffmail.pl 4 800 10 17 19 300 (timed)
+    -o splitmail.1600.12.26.16.4500.out -e splitmail.1600.12.26.16.4500.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib splitmail.pl 1600 12 26 16 4500 (timed)
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Issuing command '/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q'
+/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Start command: Thu Apr 23 01:43:18 2015 (1429733598)
+Stop command: Thu Apr 23 01:48:52 2015 (1429733932)
+Elapsed time for command: 00:05:34 (334)
+Workload elapsed time (0:1) = 176.611118 seconds
+Workload elapsed time (0:2) = 58.398504 seconds
+Workload elapsed time (0:3) = 91.063161 seconds
+Copy 0 of 400.perlbench (base ref) run 2 finished at Thu Apr 23 01:48:44 2015.  Total elapsed time: 326.072783
+comparing files in '/home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000'
+comparing 'checkspam.2500.5.25.11.150.1.1.1.1.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+comparing 'diffmail.4.800.10.17.19.300.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+comparing 'splitmail.1600.12.26.16.4500.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Issuing command '/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd'
+/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Start command: Thu Apr 23 01:48:52 2015 (1429733932)
+Stop command: Thu Apr 23 01:48:53 2015 (1429733933)
+Elapsed time for command: 00:00:01 (1)
+Benchmark Times:
+  Start:    Thu Apr 23 01:43:18 2015 (1429733598)
+  Stop:     Thu Apr 23 01:48:52 2015 (1429733932)
+  Elapsed:  00:05:34 (334)
+  Reported: 326 72922000 326.072922
+ Success 400.perlbench base ref ratio=29.96, runtime=326.072922, power=0.00w, temp=0.00 deg, humidity=0.00%
+
+-----------------------------------
+  Running (#3) 400.perlbench ref base gcc43-64bit default
+Commands to run:
+    -b numactl -m 0 --physcpubind=0
+    -C /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000
+    -o checkspam.2500.5.25.11.150.1.1.1.1.out -e checkspam.2500.5.25.11.150.1.1.1.1.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib checkspam.pl 2500 5 25 11 150 1 1 1 1 (timed)
+    -o diffmail.4.800.10.17.19.300.out -e diffmail.4.800.10.17.19.300.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib diffmail.pl 4 800 10 17 19 300 (timed)
+    -o splitmail.1600.12.26.16.4500.out -e splitmail.1600.12.26.16.4500.err ../run_base_ref_gcc43-64bit.0000/perlbench_base.gcc43-64bit -I./lib splitmail.pl 1600 12 26 16 4500 (timed)
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Issuing command '/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q'
+/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+Start command: Thu Apr 23 01:48:54 2015 (1429733934)
+Stop command: Thu Apr 23 01:54:27 2015 (1429734267)
+Elapsed time for command: 00:05:33 (333)
+Workload elapsed time (0:1) = 175.444959 seconds
+Workload elapsed time (0:2) = 58.65969 seconds
+Workload elapsed time (0:3) = 91.252429 seconds
+Copy 0 of 400.perlbench (base ref) run 3 finished at Thu Apr 23 01:54:19 2015.  Total elapsed time: 325.357078
+comparing files in '/home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000'
+comparing 'checkspam.2500.5.25.11.150.1.1.1.1.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+comparing 'diffmail.4.800.10.17.19.300.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+comparing 'splitmail.1600.12.26.16.4500.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+Specinvoke: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Issuing command '/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd'
+/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/run/run_base_ref_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+Start command: Thu Apr 23 01:54:27 2015 (1429734267)
+Stop command: Thu Apr 23 01:54:28 2015 (1429734268)
+Elapsed time for command: 00:00:01 (1)
+Benchmark Times:
+  Start:    Thu Apr 23 01:48:54 2015 (1429733934)
+  Stop:     Thu Apr 23 01:54:27 2015 (1429734267)
+  Elapsed:  00:05:33 (333)
+  Reported: 325 357196000 325.357196
+ Success 400.perlbench base ref ratio=30.03, runtime=325.357196, power=0.00w, temp=0.00 deg, humidity=0.00%
+Success: 3x400.perlbench
+Producing Raw Reports
+mach: default
+  ext: gcc43-64bit
+    size: ref
+      set: int
+        format: raw -> /home/blesson/cpu200/result/CINT2006.014.ref.rsf
+Parsing flags for 400.perlbench base: done
+Doing flag reduction: done
+        format: flags -> /home/blesson/cpu200/result/CINT2006.014.ref.flags.html
+        format: PDF -> /home/blesson/cpu200/result/CINT2006.014.ref.pdf
+      set: fp
+
+The log for this run is in /home/blesson/cpu200/result/CPU2006.014.log
+
+runspec finished at Thu Apr 23 01:54:32 2015; 1016 total seconds elapsed

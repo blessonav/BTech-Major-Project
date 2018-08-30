@@ -1,0 +1,34 @@
+runspec v6674 started at Thu Apr 23 01:37:04 2015 on "blesson-Inspiron-7420"
+runspec is: /home/blesson/cpu200/bin/runspec
+runspec: runspec --config=fin1.cfg --action=build --noreportable --tune=base 400.perlbench
+toolset: linux-suse10-amd64
+
+Locating benchmarks...found 31 benchmarks in 6 benchsets.
+Reading config file '/home/blesson/cpu200/config/fin1.cfg'
+Running "specperl /home/blesson/cpu200/Docs/sysinfo" to gather system information.
+Read 62 total lines from the sysinfo program.
+Read 61 usable lines from the sysinfo program.
+
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml)...
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-linux-platform-revA.xml)...
+Verbosity = 5
+Action    = build
+Tune      = base
+Ext       = gcc43-64bit
+Size      = ref
+Machine   = default
+benchmarks= 400.perlbench
+outputs   = asc,csv,html,pdf
+username  = blesson
+Benchmarks selected: 400.perlbench
+Compiling Binaries
+
+------------------------------------------------------------------------
+  Up to date 400.perlbench base gcc43-64bit default
+
+
+Build Complete
+
+The log for this run is in /home/blesson/cpu200/result/CPU2006.013.log
+
+runspec finished at Thu Apr 23 01:37:05 2015; 1 total seconds elapsed

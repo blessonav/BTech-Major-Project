@@ -1,0 +1,94 @@
+runspec v6674 started at Thu Apr 23 13:07:22 2015 on "blesson-Inspiron-7420"
+runspec is: /home/blesson/cpu200/bin/runspec
+runspec: runspec --config=fin1.cfg --action=build --tune=base,peak fp
+toolset: linux-suse10-amd64
+
+Locating benchmarks...found 31 benchmarks in 6 benchsets.
+Reading config file '/home/blesson/cpu200/config/fin1.cfg'
+Running "specperl /home/blesson/cpu200/Docs/sysinfo" to gather system information.
+Read 62 total lines from the sysinfo program.
+Read 61 usable lines from the sysinfo program.
+
+Loading "http://www.spec.org/auto/cpu2006/current_version" for version check: OK
+
+ERROR: You are running a version of the suite that is newer than the newest
+         available from SPEC.  How did you do that?
+
+                       ----------------------------------
+                       The run will continue in 5 seconds
+                       ----------------------------------
+
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml)...
+Retrieving flags file (/home/blesson/cpu200/config/flags/Example-linux-platform-revA.xml)...
+Verbosity = 5
+Action    = build
+Tune      = base,peak
+Ext       = gcc43-64bit
+Size      = ref
+Machine   = default
+benchmarks= 410.bwaves,416.gamess,433.milc,434.zeusmp,435.gromacs,436.cactusADM,437.leslie3d,444.namd,447.dealII,450.soplex,453.povray,454.calculix,459.GemsFDTD,465.tonto,470.lbm,481.wrf,482.sphinx3,998.specrand
+outputs   = asc,csv,html,pdf
+username  = blesson
+Benchmarks selected: 410.bwaves, 416.gamess, 433.milc, 434.zeusmp, 435.gromacs, 436.cactusADM, 437.leslie3d, 444.namd, 447.dealII, 450.soplex, 453.povray, 454.calculix, 459.GemsFDTD, 465.tonto, 470.lbm, 481.wrf, 482.sphinx3, 998.specrand
+Compiling Binaries
+
+------------------------------------------------------------------------
+  Up to date 410.bwaves base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 416.gamess base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 433.milc base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 434.zeusmp base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 435.gromacs base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 436.cactusADM base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 437.leslie3d base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 444.namd base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 447.dealII base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 450.soplex base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 453.povray base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 454.calculix base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 459.GemsFDTD base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 465.tonto base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 470.lbm base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 481.wrf base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 482.sphinx3 base gcc43-64bit default
+
+------------------------------------------------------------------------
+  Up to date 998.specrand base gcc43-64bit default
+
+
+Build Complete
+
+The log for this run is in /home/blesson/cpu200/result/CPU2006.016.log
+
+runspec finished at Thu Apr 23 13:07:38 2015; 16 total seconds elapsed

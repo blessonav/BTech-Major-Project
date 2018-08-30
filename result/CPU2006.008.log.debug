@@ -1,0 +1,936 @@
+==============================================================================
+Debug log for CPU2006.  This file contains very detailed debugging
+output from the CPU2006 tools (as if "--verbose 99" had been specified) and is
+typically useful only to developers of the CPU2006 toolset.   
+
+For a successful run, this debug log will be removed automatically, unless you
+specify "--keeptmp" on the command line, or "keeptmp=1" in your config file.
+
+If you file a support request with cpu2006support@spec.org, you may be
+asked to submit this file.
+------------------------------------------------------------------------------
+
+Environment variables that should have been set or changed by shrc:
+SPEC: /home/blesson/cpu200
+PATH: /home/blesson/cpu200/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+SPECPERLLIB: /home/blesson/cpu200/bin:/home/blesson/cpu200/bin/lib
+LD_LIBRARY_PATH: 
+DYLD_LIBRARY_PATH: 
+LC_ALL: C
+LC_LANG: C
+SPECDB_PWD: /home/blesson/cpu200/config
+------------------------------------------------------------------------------
+
+Runspec's verbose version output:
+                 This is the SPEC CPU2006 benchmark tools suite.
+
+Version summary:
+    CPU2006 version: 1.2
+ Benchmarks version: 118
+      Tools version: 118
+    runspec version: 6674 ($Id: runspec 6674 2011-07-21 16:47:54Z CloyceS $)
+
+Tools information:
+ Tools package installed: linux-suse10-amd64
+ File locking method: fcntl(2) (probably network-safe)
+Mode |  UID  |  GID  |   Size  |    Modified Date   | Name
+0755 | 1000  | 1000  |  168536 | 15-Apr-2011 22:02:04 | specmake
+0755 | 1000  | 1000  | 1365259 | 15-Apr-2011 22:02:05 | specperl
+0755 | 1000  | 1000  |   25088 | 15-Apr-2011 22:02:50 | specinvoke
+0755 | 1000  | 1000  |   27736 | 15-Apr-2011 22:02:50 | specinvoke_pm
+0755 | 1000  | 1000  |  189984 | 15-Apr-2011 22:02:05 | specxz
+0755 | 1000  | 1000  |   40560 | 15-Apr-2011 22:02:50 | specmd5sum
+0755 | 1000  | 1000  |    7647 | 21-Apr-2015 03:43:53 | specdiff
+0755 | 1000  | 1000  |   89749 | 21-Apr-2015 03:43:53 | specpp
+0755 | 1000  | 1000  |  239088 | 15-Apr-2011 22:02:05 | specrxp
+0755 | 1000  | 1000  |  129063 | 21-Apr-2015 03:43:53 | runspec
+
+Version info for specinvoke (specinvoke): specinvoke r6392
+Version info for specmake (specmake): GNU Make 3.82
+Version info for specrxp (/home/blesson/cpu200/bin/specrxp): RXP 1.5.0 Copyright Richard Tobin, LTG, HCRC, University of Edinburgh
+                                                             Modified for use in SPEC benchmarks - 14 April 2011
+Version info for specxz (/home/blesson/cpu200/bin/specxz): xz (XZ Utils) 5.0.0
+Version info for specpp (/home/blesson/cpu200/bin/specperl): filepp version 1.8.0SPEC
+Version info for specperl (/home/blesson/cpu200/bin/specperl): This is specperl 5, version 12, subversion 3 (v5.12.3) built for x86_64-linux
+                                                               For more detail on specperl, say 'specperl -V'
+
+==============================================================================
+
+1429610927.79: runspec v6674 started at Tue Apr 21 15:38:46 2015 on "blesson-Inspiron-7420"
+1429610927.79: runspec is: /home/blesson/cpu200/bin/runspec
+1429610927.79: runspec: runspec --config=fin2.cfg --size=ref --reportable --tune=base,peak --iterations=3 --output_format=pdf fp
+1429610927.79: toolset: linux-suse10-amd64
+
+1429610927.79(0.02s): Locating benchmarks...Created default regexp '(?:^|(?<=\s))[-/]DSPEC_CPU(?:=\S*)?(?=\s|$)' for DSPEC_CPU in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.81: Created default regexp '(?:^|(?<=\s))[-/]USPEC_CPU(?:=\S*)?(?=\s|$)' for USPEC_CPU in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.81: Created default regexp '(?:^|(?<=\s))[-/]DNDEBUG(?:=\S*)?(?=\s|$)' for DNDEBUG in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.81: Created default regexp '(?:^|(?<=\s))[-/]UNDEBUG(?:=\S*)?(?=\s|$)' for UNDEBUG in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.81: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_CPU_WINDOWS(?:=\S*)?(?=\s|$)' for DSPEC_CPU_WINDOWS in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.81: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_CPU_ILP32(?:=\S*)?(?=\s|$)' for DSPEC_CPU_ILP32 in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.81: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_CPU_P64(?:=\S*)?(?=\s|$)' for DSPEC_CPU_P64 in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.81: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_CPU_LP64(?:=\S*)?(?=\s|$)' for DSPEC_CPU_LP64 in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.81: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_CPU_ILP64(?:=\S*)?(?=\s|$)' for DSPEC_CPU_ILP64 in /home/blesson/cpu200/benchspec/flags-mandatory.xml
+1429610927.82: Reading suite directory for 'Makefile.defaults', '/home/blesson/cpu200/benchspec'
+1429610927.82: Reading suite directory for 'CPU2006', '/home/blesson/cpu200/benchspec'
+1429610927.82:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '436.cactusADM'
+1429610927.82:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/436.cactusADM/Spec/object.pm in 0.001011848s
+1429610927.82:     Instantiated Spec::Benchmark::cactusADM436 in 0.000693083s
+1429610927.82:     Finding src.alts took 0.000087023s
+1429610927.82:   Setting up cactusADM took 0.002308130s
+
+1429610927.82:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '401.bzip2'
+1429610927.82:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/401.bzip2/Spec/object.pm in 0.000451088s
+1429610927.82:     Instantiated Spec::Benchmark::bzip2401 in 0.000412941s
+1429610927.82:     Finding src.alts took 0.000056028s
+1429610927.82:   Setting up bzip2 took 0.001388073s
+
+1429610927.82:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '416.gamess'
+1429610927.82:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/416.gamess/Spec/object.pm in 0.000705957s
+1429610927.82:     Instantiated Spec::Benchmark::gamess416 in 0.000452042s
+1429610927.82:     Finding src.alts took 0.000070095s
+1429610927.82:   Setting up gamess took 0.001698017s
+
+1429610927.82:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '481.wrf'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/481.wrf/Spec/object.pm in 0.003025055s
+1429610927.83:     Instantiated Spec::Benchmark::wrf481 in 0.000521183s
+1429610927.83:     Finding src.alts took 0.000025034s
+1429610927.83:   Setting up wrf took 0.003905058s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '435.gromacs'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/435.gromacs/Spec/object.pm in 0.000210047s
+1429610927.83:     Instantiated Spec::Benchmark::gromacs435 in 0.000194788s
+1429610927.83:     Finding src.alts took 0.000022888s
+1429610927.83:   Setting up gromacs took 0.000623941s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '465.tonto'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/465.tonto/Spec/object.pm in 0.001312017s
+1429610927.83:     Instantiated Spec::Benchmark::tonto465 in 0.000339031s
+1429610927.83:     Finding src.alts took 0.000048876s
+1429610927.83:   Setting up tonto took 0.001976013s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', 'all_fortran.bset'
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '444.namd'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/444.namd/Spec/object.pm in 0.000329971s
+1429610927.83:     Instantiated Spec::Benchmark::namd444 in 0.000283003s
+1429610927.83:     Finding src.alts took 0.000035048s
+1429610927.83:   Setting up namd took 0.000933170s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '410.bwaves'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/Spec/object.pm in 0.000195980s
+1429610927.83:     Instantiated Spec::Benchmark::bwaves410 in 0.000169992s
+1429610927.83:     Finding src.alts took 0.000023127s
+1429610927.83:   Setting up bwaves took 0.000602961s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '433.milc'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/433.milc/Spec/object.pm in 0.000193119s
+1429610927.83:     Instantiated Spec::Benchmark::milc433 in 0.000177145s
+1429610927.83:     Finding src.alts took 0.000021935s
+1429610927.83:   Setting up milc took 0.000572205s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '429.mcf'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/429.mcf/Spec/object.pm in 0.000178814s
+1429610927.83:     Instantiated Spec::Benchmark::mcf429 in 0.000165939s
+1429610927.83:     Finding src.alts took 0.000023127s
+1429610927.83:   Setting up mcf took 0.000566959s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '462.libquantum'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/462.libquantum/Spec/object.pm in 0.000213861s
+1429610927.83:     Instantiated Spec::Benchmark::libquantum462 in 0.000159979s
+1429610927.83:     Finding src.alts took 0.000023127s
+1429610927.83:   Setting up libquantum took 0.000581026s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '456.hmmer'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/456.hmmer/Spec/object.pm in 0.000259876s
+1429610927.83:     Instantiated Spec::Benchmark::hmmer456 in 0.000210047s
+1429610927.83:     Finding src.alts took 0.000023127s
+1429610927.83:   Setting up hmmer took 0.000674963s
+
+1429610927.83:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '483.xalancbmk'
+1429610927.83:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/483.xalancbmk/Spec/object.pm in 0.000731945s
+1429610927.83:     Instantiated Spec::Benchmark::xalancbmk483 in 0.000233889s
+1429610927.83:     Finding src.alts took 0.000024080s
+1429610927.84:   Setting up xalancbmk took 0.001179934s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '403.gcc'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/403.gcc/Spec/object.pm in 0.000225067s
+1429610927.84:     Instantiated Spec::Benchmark::gcc403 in 0.000182152s
+1429610927.84:     Finding src.alts took 0.000023127s
+1429610927.84:   Setting up gcc took 0.000610113s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '453.povray'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/453.povray/Spec/object.pm in 0.000231981s
+1429610927.84:     Instantiated Spec::Benchmark::povray453 in 0.000183105s
+1429610927.84:     Finding src.alts took 0.000022888s
+1429610927.84:   Setting up povray took 0.000615120s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', 'CFP2006.bset'
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', 'all_mixed.bset'
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '459.GemsFDTD'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/459.GemsFDTD/Spec/object.pm in 0.000255108s
+1429610927.84:     Instantiated Spec::Benchmark::GemsFDTD459 in 0.000210047s
+1429610927.84:     Finding src.alts took 0.000024080s
+1429610927.84:   Setting up GemsFDTD took 0.000671864s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '998.specrand'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/998.specrand/Spec/object.pm in 0.000168085s
+1429610927.84:     Instantiated Spec::Benchmark::specrand998 in 0.000161171s
+1429610927.84:     Finding src.alts took 0.000021935s
+1429610927.84:   Setting up specrand took 0.000530005s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '400.perlbench'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/400.perlbench/Spec/object.pm in 0.000829935s
+1429610927.84:     Instantiated Spec::Benchmark::perlbench400 in 0.000219822s
+1429610927.84:     Finding src.alts took 0.000027180s
+1429610927.84:   Setting up perlbench took 0.001270056s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', 'all_cpp.bset'
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '464.h264ref'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/464.h264ref/Spec/object.pm in 0.000211000s
+1429610927.84:     Instantiated Spec::Benchmark::h264ref464 in 0.000162840s
+1429610927.84:     Finding src.alts took 0.000023127s
+1429610927.84:   Setting up h264ref took 0.000576973s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '458.sjeng'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/458.sjeng/Spec/object.pm in 0.000154018s
+1429610927.84:     Instantiated Spec::Benchmark::sjeng458 in 0.000157118s
+1429610927.84:     Finding src.alts took 0.000023127s
+1429610927.84:   Setting up sjeng took 0.000513077s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '482.sphinx3'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/Spec/object.pm in 0.000562906s
+1429610927.84:     Instantiated Spec::Benchmark::sphinx3482 in 0.000219107s
+1429610927.84:     Finding src.alts took 0.000022888s
+1429610927.84:   Setting up sphinx3 took 0.000986099s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '473.astar'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/473.astar/Spec/object.pm in 0.000223160s
+1429610927.84:     Instantiated Spec::Benchmark::astar473 in 0.000162125s
+1429610927.84:     Finding src.alts took 0.000022888s
+1429610927.84:   Setting up astar took 0.000586033s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', 'all_c.bset'
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '445.gobmk'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/445.gobmk/Spec/object.pm in 0.000199080s
+1429610927.84:     Instantiated Spec::Benchmark::gobmk445 in 0.000161171s
+1429610927.84:     Finding src.alts took 0.000021935s
+1429610927.84:   Setting up gobmk took 0.000559807s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '999.specrand'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/999.specrand/Spec/object.pm in 0.000163078s
+1429610927.84:     Instantiated Spec::Benchmark::specrand999 in 0.000156164s
+1429610927.84:     Finding src.alts took 0.000021935s
+1429610927.84:   Setting up specrand took 0.000515938s
+
+1429610927.84:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '434.zeusmp'
+1429610927.84:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/434.zeusmp/Spec/object.pm in 0.000162840s
+1429610927.85:     Instantiated Spec::Benchmark::zeusmp434 in 0.000165939s
+1429610927.85:     Finding src.alts took 0.000021935s
+1429610927.85:   Setting up zeusmp took 0.000526905s
+
+1429610927.85:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '454.calculix'
+1429610927.85:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/454.calculix/Spec/object.pm in 0.000459909s
+1429610927.85:     Instantiated Spec::Benchmark::calculix454 in 0.000204086s
+1429610927.85:     Finding src.alts took 0.000024080s
+1429610927.85:   Setting up calculix took 0.000871897s
+
+1429610927.85:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', 'CINT2006.bset'
+1429610927.85:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '437.leslie3d'
+1429610927.85:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/437.leslie3d/Spec/object.pm in 0.000151157s
+1429610927.85:     Instantiated Spec::Benchmark::leslie3d437 in 0.000163078s
+1429610927.85:     Finding src.alts took 0.000021935s
+1429610927.85:   Setting up leslie3d took 0.000517130s
+
+1429610927.85:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '471.omnetpp'
+1429610927.85:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/471.omnetpp/Spec/object.pm in 0.000182152s
+1429610927.85:     Instantiated Spec::Benchmark::omnetpp471 in 0.000168085s
+1429610927.85:     Finding src.alts took 0.000021935s
+1429610927.85:   Setting up omnetpp took 0.000547886s
+
+1429610927.85:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '470.lbm'
+1429610927.85:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/470.lbm/Spec/object.pm in 0.000149012s
+1429610927.85:     Instantiated Spec::Benchmark::lbm470 in 0.000155926s
+1429610927.85:     Finding src.alts took 0.000021935s
+1429610927.85:   Setting up lbm took 0.000502110s
+
+1429610927.85:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '447.dealII'
+1429610927.85:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/447.dealII/Spec/object.pm in 0.000594854s
+1429610927.85:     Instantiated Spec::Benchmark::dealII447 in 0.000191927s
+1429610927.85:     Finding src.alts took 0.000025988s
+1429610927.85:   Setting up dealII took 0.000998974s
+
+1429610927.85:   Reading benchmark directory for '/home/blesson/cpu200/benchspec/CPU2006', '/home/blesson/cpu200/benchspec', '450.soplex'
+1429610927.85:     Evaluated /home/blesson/cpu200/benchspec/CPU2006/450.soplex/Spec/object.pm in 0.000316143s
+1429610927.85:     Instantiated Spec::Benchmark::soplex450 in 0.000158787s
+1429610927.85:     Finding src.alts took 0.000023842s
+1429610927.85:   Setting up soplex took 0.000679016s
+
+1429610927.85: Setting up suite took 0.034478188s
+1429610927.85: Reading suite directory for 'flags-mandatory.xml', '/home/blesson/cpu200/benchspec'
+1429610927.85: Reading suite directory for 'version.txt', '/home/blesson/cpu200/benchspec'
+1429610927.85: found 31 benchmarks in 6 benchsets.
+1429610927.85: Reading config file '/home/blesson/cpu200/config/fin2.cfg'
+1429610927.86: Running "specperl /home/blesson/cpu200/Docs/sysinfo" to gather system information.
+1429610927.96: Read 62 total lines from the sysinfo program.
+1429610927.96: Read 61 usable lines from the sysinfo program.
+
+1429610927.99:   '410.bwaves' added
+1429610927.99:   '416.gamess' added
+1429610927.99:   '433.milc' added
+1429610927.99:   '434.zeusmp' added
+1429610927.99:   '435.gromacs' added
+1429610927.99:   '436.cactusADM' added
+1429610927.99:   '437.leslie3d' added
+1429610927.99:   '444.namd' added
+1429610927.99:   '447.dealII' added
+1429610927.99:   '450.soplex' added
+1429610927.99:   '453.povray' added
+1429610927.99:   '454.calculix' added
+1429610927.99:   '459.GemsFDTD' added
+1429610927.99:   '465.tonto' added
+1429610927.99:   '470.lbm' added
+1429610927.99:   '481.wrf' added
+1429610927.99:   '482.sphinx3' added
+1429610927.99:   '998.specrand' added
+1429610927.99(0.55s): Loading "http://www.spec.org/auto/cpu2006/current_version" for version check: OK
+1429610928.54: Reportable runs must include a 'test' run; adding to run list
+1429610928.54: Reportable runs must include a 'train' run; adding to run list
+1429610928.54: Retrieving flags file (/home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml)...
+1429610928.57: Created default regexp '(?:^|(?<=\s))-O0(?:=\S*)?(?=\s|$)' for F-O0 in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-O1(?:=\S*)?(?=\s|$)' for F-O1 in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-O2(?:=\S*)?(?=\s|$)' for F-O2 in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-O3(?:=\S*)?(?=\s|$)' for F-O3 in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-falign-functions(?:=\S*)?(?=\s|$)' for F-falign-functions in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-falign-loops(?:=\S*)?(?=\s|$)' for F-falign-loops in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-falign-loops-max-skip(?:=\S*)?(?=\s|$)' for F-falign-loops-max-skip in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-falign-jumps(?:=\S*)?(?=\s|$)' for F-falign-jumps in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-falign-jumps-max-skip(?:=\S*)?(?=\s|$)' for F-falign-jumps-max-skip in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-force_cpusubtype_ALL(?:=\S*)?(?=\s|$)' for F-force_cpusubtype_ALL in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fsched-interblock(?:=\S*)?(?=\s|$)' for F-fsched-interblock in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fstrict-aliasing(?:=\S*)?(?=\s|$)' for F-fstrict-aliasing in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fno-second-underscore(?:=\S*)?(?=\s|$)' for F-fno-second-underscore in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fno-strict-aliasing(?:=\S*)?(?=\s|$)' for F-fno-strict-aliasing in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-funroll-loops(?:=\S*)?(?=\s|$)' for F-funroll-loops in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ffast-math(?:=\S*)?(?=\s|$)' for F-ffast-math in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-malign-natural(?:=\S*)?(?=\s|$)' for F-malign-natural in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-mtune(?:=\S*)?(?=\s|$)' for F-mtune in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-mdynamic-no-pic(?:=\S*)?(?=\s|$)' for F-mdynamic-no-pic in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fno-trapping-math(?:=\S*)?(?=\s|$)' for F-fno-trapping-math in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fno-signaling-nans(?:=\S*)?(?=\s|$)' for F-fno-signaling-nans in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-funsafe-math-optimizations(?:=\S*)?(?=\s|$)' for F-funsafe-math-optimizations in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ffinite-math-only(?:=\S*)?(?=\s|$)' for F-ffinite-math-only in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fno-math-errno(?:=\S*)?(?=\s|$)' for F-fno-math-errno in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-frerun-cse-after-loop(?:=\S*)?(?=\s|$)' for F-frerun-cse-after-loop in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-finline-functions(?:=\S*)?(?=\s|$)' for F-finline-functions in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fno-inline-functions(?:=\S*)?(?=\s|$)' for F-fno-inline-functions in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-frename-registers(?:=\S*)?(?=\s|$)' for F-frename-registers in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fgcse-after-reload(?:=\S*)?(?=\s|$)' for F-fgcse-after-reload in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-funsigned-char(?:=\S*)?(?=\s|$)' for F-funsigned-char in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-DSPEC_CPU_ENABLE_FORTRAN_TO_C(?:=\S*)?(?=\s|$)' for F-DSPEC_CPU_ENABLE_FORTRAN_TO_C in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-funswitch-loops(?:=\S*)?(?=\s|$)' for F-funswitch-loops in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-m32(?:=\S*)?(?=\s|$)' for F-m32 in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fdefer-pop(?:=\S*)?(?=\s|$)' for F-fdefer-pop in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fdelayed-branch(?:=\S*)?(?=\s|$)' for F-fdelayed-branch in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fguess-branch-probability(?:=\S*)?(?=\s|$)' for F-fguess-branch-probability in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fcprop-registers(?:=\S*)?(?=\s|$)' for F-fcprop-registers in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-floop-optimize(?:=\S*)?(?=\s|$)' for F-floop-optimize in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fif-conversion(?:=\S*)?(?=\s|$)' for F-fif-conversion in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fif-conversion2(?:=\S*)?(?=\s|$)' for F-fif-conversion2 in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-ccp(?:=\S*)?(?=\s|$)' for F-ftree-ccp in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-dce(?:=\S*)?(?=\s|$)' for F-ftree-dce in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-dominator-opts(?:=\S*)?(?=\s|$)' for F-ftree-dominator-opts in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-dse(?:=\S*)?(?=\s|$)' for F-ftree-dse in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-ter(?:=\S*)?(?=\s|$)' for F-ftree-ter in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-lrs(?:=\S*)?(?=\s|$)' for F-ftree-lrs in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-sra(?:=\S*)?(?=\s|$)' for F-ftree-sra in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-copyrename(?:=\S*)?(?=\s|$)' for F-ftree-copyrename in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-fre(?:=\S*)?(?=\s|$)' for F-ftree-fre in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-ftree-ch(?:=\S*)?(?=\s|$)' for F-ftree-ch in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fmerge-constants(?:=\S*)?(?=\s|$)' for F-fmerge-constants in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fomit-frame-pointer(?:=\S*)?(?=\s|$)' for F-fomit-frame-pointer in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fthread-jumps(?:=\S*)?(?=\s|$)' for F-fthread-jumps in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.57: Created default regexp '(?:^|(?<=\s))-fcrossjumping(?:=\S*)?(?=\s|$)' for F-fcrossjumping in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-foptimize-sibling-calls(?:=\S*)?(?=\s|$)' for F-foptimize-sibling-calls in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fcse-follow-jumps(?:=\S*)?(?=\s|$)' for F-fcse-follow-jumps in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fcse-skip-blocks(?:=\S*)?(?=\s|$)' for F-fcse-skip-blocks in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fgcse(?:=\S*)?(?=\s|$)' for F-fgcse in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fgcse-lm(?:=\S*)?(?=\s|$)' for F-fgcse-lm in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fexpensive-optimizations(?:=\S*)?(?=\s|$)' for F-fexpensive-optimizations in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fstrength-reduce(?:=\S*)?(?=\s|$)' for F-fstrength-reduce in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-frerun-loop-opt(?:=\S*)?(?=\s|$)' for F-frerun-loop-opt in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fcaller-saves(?:=\S*)?(?=\s|$)' for F-fcaller-saves in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fpeephole2(?:=\S*)?(?=\s|$)' for F-fpeephole2 in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fschedule-insns(?:=\S*)?(?=\s|$)' for F-fschedule-insns in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fschedule-insns2(?:=\S*)?(?=\s|$)' for F-fschedule-insns2 in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fnosched-interblock(?:=\S*)?(?=\s|$)' for F-fnosched-interblock in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fsched-spec(?:=\S*)?(?=\s|$)' for F-fsched-spec in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fregmove(?:=\S*)?(?=\s|$)' for F-fregmove in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-fdelete-null-pointer-checks(?:=\S*)?(?=\s|$)' for F-fdelete-null-pointer-checks in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-freorder-blocks(?:=\S*)?(?=\s|$)' for F-freorder-blocks in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-freorder-functions(?:=\S*)?(?=\s|$)' for F-freorder-functions in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-funit-at-a-time(?:=\S*)?(?=\s|$)' for F-funit-at-a-time in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-falign-labels(?:=\S*)?(?=\s|$)' for F-falign-labels in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-ftree-vrp(?:=\S*)?(?=\s|$)' for F-ftree-vrp in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-ftree-pre(?:=\S*)?(?=\s|$)' for F-ftree-pre in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Created default regexp '(?:^|(?<=\s))-f(?:=\S*)?(?=\s|$)' for F-f in /home/blesson/cpu200/config/flags/Example-gcc4x-flags-revA.xml
+1429610928.58: Retrieving flags file (/home/blesson/cpu200/config/flags/Example-linux-platform-revA.xml)...
+1429610928.59: Verbosity = 5
+1429610928.59: Action    = validate
+1429610928.59: Tune      = base,peak
+1429610928.59: Ext       = gcc43-64bit
+1429610928.59: Size      = test,train,ref
+1429610928.59: Machine   = default
+1429610928.59: benchmarks= 410.bwaves,416.gamess,433.milc,434.zeusmp,435.gromacs,436.cactusADM,437.leslie3d,444.namd,447.dealII,450.soplex,453.povray,454.calculix,459.GemsFDTD,465.tonto,470.lbm,481.wrf,482.sphinx3,998.specrand
+1429610928.59: outputs   = pdf
+1429610928.59: username  = blesson
+1429610928.59: Benchmarks selected: 410.bwaves, 416.gamess, 433.milc, 434.zeusmp, 435.gromacs, 436.cactusADM, 437.leslie3d, 444.namd, 447.dealII, 450.soplex, 453.povray, 454.calculix, 459.GemsFDTD, 465.tonto, 470.lbm, 481.wrf, 482.sphinx3, 998.specrand
+
+1429610928.66: Notice: Errors may not be ignored for reportable runs.
+1429610928.66: Compiling Binaries
+
+1429610928.66: ------------------------------------------------------------------------
+1429610928.96: Tee child 23828 exited with code 0 (exit code=0, signal=0)
+1429610928.96:   Up to date 410.bwaves base gcc43-64bit default
+
+1429610928.96: ------------------------------------------------------------------------
+1429610929.29: Tee child 23853 exited with code 0 (exit code=0, signal=0)
+1429610929.29:   Up to date 416.gamess base gcc43-64bit default
+
+1429610929.29: ------------------------------------------------------------------------
+1429610929.59: Tee child 23881 exited with code 0 (exit code=0, signal=0)
+1429610929.59:   Up to date 433.milc base gcc43-64bit default
+
+1429610929.59: ------------------------------------------------------------------------
+1429610929.89: Tee child 23904 exited with code 0 (exit code=0, signal=0)
+1429610929.90:   Up to date 434.zeusmp base gcc43-64bit default
+
+1429610929.90: ------------------------------------------------------------------------
+1429610930.20: Tee child 23930 exited with code 0 (exit code=0, signal=0)
+1429610930.20:   Up to date 435.gromacs base gcc43-64bit default
+
+1429610930.20: ------------------------------------------------------------------------
+1429610930.52: Tee child 23973 exited with code 0 (exit code=0, signal=0)
+1429610930.52:   Up to date 436.cactusADM base gcc43-64bit default
+
+1429610930.52: ------------------------------------------------------------------------
+1429610930.83: Tee child 24016 exited with code 0 (exit code=0, signal=0)
+1429610930.83:   Up to date 437.leslie3d base gcc43-64bit default
+
+1429610930.83: ------------------------------------------------------------------------
+1429610931.13: Tee child 24038 exited with code 0 (exit code=0, signal=0)
+1429610931.13:   Up to date 444.namd base gcc43-64bit default
+
+1429610931.13: ------------------------------------------------------------------------
+1429610931.46: Tee child 24060 exited with code 0 (exit code=0, signal=0)
+1429610931.46:   Up to date 447.dealII base gcc43-64bit default
+
+1429610931.46: ------------------------------------------------------------------------
+1429610931.76: Tee child 24082 exited with code 0 (exit code=0, signal=0)
+1429610931.77:   Up to date 450.soplex base gcc43-64bit default
+
+1429610931.77: ------------------------------------------------------------------------
+1429610931.94: Tee child 24104 exited with code 0 (exit code=0, signal=0)
+1429610931.94:   Up to date 453.povray base gcc43-64bit default
+
+1429610931.94: ------------------------------------------------------------------------
+1429610932.26: Tee child 24126 exited with code 0 (exit code=0, signal=0)
+1429610932.26:   Up to date 454.calculix base gcc43-64bit default
+
+1429610932.26: ------------------------------------------------------------------------
+1429610932.57: Tee child 24169 exited with code 0 (exit code=0, signal=0)
+1429610932.57:   Up to date 459.GemsFDTD base gcc43-64bit default
+
+1429610932.57: ------------------------------------------------------------------------
+1429610932.90: Tee child 24195 exited with code 0 (exit code=0, signal=0)
+1429610933.05:   Up to date 465.tonto base gcc43-64bit default
+
+1429610933.05: ------------------------------------------------------------------------
+1429610933.34: Tee child 24222 exited with code 0 (exit code=0, signal=0)
+1429610933.35:   Up to date 470.lbm base gcc43-64bit default
+
+1429610933.35: ------------------------------------------------------------------------
+1429610933.69: Tee child 24246 exited with code 0 (exit code=0, signal=0)
+1429610933.69:   Up to date 481.wrf base gcc43-64bit default
+
+1429610933.69: ------------------------------------------------------------------------
+1429610934.00: Tee child 24289 exited with code 0 (exit code=0, signal=0)
+1429610934.00:   Up to date 482.sphinx3 base gcc43-64bit default
+
+1429610934.00: ------------------------------------------------------------------------
+1429610934.30: Tee child 24312 exited with code 0 (exit code=0, signal=0)
+1429610934.30:   Up to date 998.specrand base gcc43-64bit default
+
+
+1429610934.30: Setting Up Run Directories
+1429610934.31:   Setting up 410.bwaves test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000/bwaves.in
+1429610934.31: Comparing MD5 hashes:
+1429610934.31:   de957901bf4ef6524a9e7787b6080b73 /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/exe/bwaves_base.gcc43-64bit
+1429610934.31:   de957901bf4ef6524a9e7787b6080b73 /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000/bwaves_base.gcc43-64bit
+1429610934.31: existing (run_base_test_gcc43-64bit.0000)
+1429610934.32:   Setting up 416.gamess test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000/exam29.config
+1429610934.32: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000/exam29.inp
+1429610934.38: Comparing MD5 hashes:
+1429610934.38:   ac62ae5bbb5cd76c35fd4a8b3ece1d7c /home/blesson/cpu200/benchspec/CPU2006/416.gamess/exe/gamess_base.gcc43-64bit
+1429610934.38:   ac62ae5bbb5cd76c35fd4a8b3ece1d7c /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000/gamess_base.gcc43-64bit
+1429610934.38: existing (run_base_test_gcc43-64bit.0000)
+1429610934.38:   Setting up 433.milc test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/433.milc/run/run_base_test_gcc43-64bit.0000/su3imp.in
+1429610934.38: Comparing MD5 hashes:
+1429610934.38:   83ce1ced244d0ced1e9977c3c5cc6cde /home/blesson/cpu200/benchspec/CPU2006/433.milc/exe/milc_base.gcc43-64bit
+1429610934.38:   83ce1ced244d0ced1e9977c3c5cc6cde /home/blesson/cpu200/benchspec/CPU2006/433.milc/run/run_base_test_gcc43-64bit.0000/milc_base.gcc43-64bit
+1429610934.38: existing (run_base_test_gcc43-64bit.0000)
+1429610934.39:   Setting up 434.zeusmp test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/434.zeusmp/run/run_base_test_gcc43-64bit.0000/zmp_inp
+1429610934.39: Comparing MD5 hashes:
+1429610934.39:   a7071f99cc538ab94d6f4ead80af55ae /home/blesson/cpu200/benchspec/CPU2006/434.zeusmp/exe/zeusmp_base.gcc43-64bit
+1429610934.39:   a7071f99cc538ab94d6f4ead80af55ae /home/blesson/cpu200/benchspec/CPU2006/434.zeusmp/run/run_base_test_gcc43-64bit.0000/zeusmp_base.gcc43-64bit
+1429610934.39: existing (run_base_test_gcc43-64bit.0000)
+1429610934.39:   Setting up 435.gromacs test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/435.gromacs/run/run_base_test_gcc43-64bit.0000/gromacs.tpr
+1429610934.42: Comparing MD5 hashes:
+1429610934.42:   6267deeed15701bfd798b204563e484e /home/blesson/cpu200/benchspec/CPU2006/435.gromacs/exe/gromacs_base.gcc43-64bit
+1429610934.42:   6267deeed15701bfd798b204563e484e /home/blesson/cpu200/benchspec/CPU2006/435.gromacs/run/run_base_test_gcc43-64bit.0000/gromacs_base.gcc43-64bit
+1429610934.42: existing (run_base_test_gcc43-64bit.0000)
+1429610934.42:   Setting up 436.cactusADM test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/436.cactusADM/run/run_base_test_gcc43-64bit.0000/benchADM.par
+1429610934.43: Comparing MD5 hashes:
+1429610934.43:   02dc9de3fe62e44ac4cb1f04de91c85d /home/blesson/cpu200/benchspec/CPU2006/436.cactusADM/exe/cactusADM_base.gcc43-64bit
+1429610934.43:   02dc9de3fe62e44ac4cb1f04de91c85d /home/blesson/cpu200/benchspec/CPU2006/436.cactusADM/run/run_base_test_gcc43-64bit.0000/cactusADM_base.gcc43-64bit
+1429610934.43: existing (run_base_test_gcc43-64bit.0000)
+1429610934.43:   Setting up 437.leslie3d test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/437.leslie3d/run/run_base_test_gcc43-64bit.0000/leslie3d.in
+1429610934.43: Comparing MD5 hashes:
+1429610934.43:   c4d72af0e5ad576e972a0c39fc192feb /home/blesson/cpu200/benchspec/CPU2006/437.leslie3d/exe/leslie3d_base.gcc43-64bit
+1429610934.43:   c4d72af0e5ad576e972a0c39fc192feb /home/blesson/cpu200/benchspec/CPU2006/437.leslie3d/run/run_base_test_gcc43-64bit.0000/leslie3d_base.gcc43-64bit
+1429610934.43: existing (run_base_test_gcc43-64bit.0000)
+1429610934.44:   Setting up 444.namd test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/444.namd/run/run_base_test_gcc43-64bit.0000/namd.input
+1429610934.48: Comparing MD5 hashes:
+1429610934.48:   00c34cc0cd4d89f6539d0e16a47d0cab /home/blesson/cpu200/benchspec/CPU2006/444.namd/exe/namd_base.gcc43-64bit
+1429610934.48:   00c34cc0cd4d89f6539d0e16a47d0cab /home/blesson/cpu200/benchspec/CPU2006/444.namd/run/run_base_test_gcc43-64bit.0000/namd_base.gcc43-64bit
+1429610934.48: existing (run_base_test_gcc43-64bit.0000)
+1429610934.48:   Setting up 447.dealII test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/447.dealII/run/run_base_test_gcc43-64bit.0000/DummyData
+1429610934.51: Comparing MD5 hashes:
+1429610934.51:   a4d18614608c96975d57afb45b5fd618 /home/blesson/cpu200/benchspec/CPU2006/447.dealII/exe/dealII_base.gcc43-64bit
+1429610934.51:   a4d18614608c96975d57afb45b5fd618 /home/blesson/cpu200/benchspec/CPU2006/447.dealII/run/run_base_test_gcc43-64bit.0000/dealII_base.gcc43-64bit
+1429610934.51: existing (run_base_test_gcc43-64bit.0000)
+1429610934.51:   Setting up 450.soplex test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/450.soplex/run/run_base_test_gcc43-64bit.0000/test.mps
+1429610934.52: Comparing MD5 hashes:
+1429610934.52:   8a8c1ffdf3e0d8f335c4d4e4efcc0720 /home/blesson/cpu200/benchspec/CPU2006/450.soplex/exe/soplex_base.gcc43-64bit
+1429610934.52:   8a8c1ffdf3e0d8f335c4d4e4efcc0720 /home/blesson/cpu200/benchspec/CPU2006/450.soplex/run/run_base_test_gcc43-64bit.0000/soplex_base.gcc43-64bit
+1429610934.52: existing (run_base_test_gcc43-64bit.0000)
+1429610934.53:   Setting up 453.povray test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/arrays.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/chars.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/colors.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/consts.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/crystal.ttf
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/cyrvetic.ttf
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/debug.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/finish.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/functions.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/glass.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/glass_old.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/golds.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/logo.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/math.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/metals.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/povlogo.ttf
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/rad_def.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/rand.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/screen.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/shapes.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/shapes2.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/shapes_old.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/shapesq.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/skies.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/stage1.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/stars.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/stdcam.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/stdinc.inc
+1429610934.53: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/stoneold.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/stones.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/stones1.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/stones2.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/strings.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/sunpos.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/textures.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/timrom.ttf
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/transforms.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/woodmaps.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/woods.inc
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/SPEC-benchmark-test.ini
+1429610934.54: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/SPEC-benchmark-test.pov
+1429610934.55: Comparing MD5 hashes:
+1429610934.55:   5727a4996ed29e80a0943624660786ad /home/blesson/cpu200/benchspec/CPU2006/453.povray/exe/povray_base.gcc43-64bit
+1429610934.55:   5727a4996ed29e80a0943624660786ad /home/blesson/cpu200/benchspec/CPU2006/453.povray/run/run_base_test_gcc43-64bit.0000/povray_base.gcc43-64bit
+1429610934.55: existing (run_base_test_gcc43-64bit.0000)
+1429610934.56:   Setting up 454.calculix test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/454.calculix/run/run_base_test_gcc43-64bit.0000/beampic.inp
+1429610934.57: Comparing MD5 hashes:
+1429610934.57:   b516f3d3b0a0db1d9afdf0ee32be82e7 /home/blesson/cpu200/benchspec/CPU2006/454.calculix/exe/calculix_base.gcc43-64bit
+1429610934.57:   b516f3d3b0a0db1d9afdf0ee32be82e7 /home/blesson/cpu200/benchspec/CPU2006/454.calculix/run/run_base_test_gcc43-64bit.0000/calculix_base.gcc43-64bit
+1429610934.57: existing (run_base_test_gcc43-64bit.0000)
+1429610934.57:   Setting up 459.GemsFDTD test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/459.GemsFDTD/run/run_base_test_gcc43-64bit.0000/sphere.pec
+1429610934.57: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/459.GemsFDTD/run/run_base_test_gcc43-64bit.0000/test.in
+1429610934.58: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/459.GemsFDTD/run/run_base_test_gcc43-64bit.0000/yee.dat
+1429610934.58: Comparing MD5 hashes:
+1429610934.58:   054818034612ceef3b8136e3d931a530 /home/blesson/cpu200/benchspec/CPU2006/459.GemsFDTD/exe/GemsFDTD_base.gcc43-64bit
+1429610934.58:   054818034612ceef3b8136e3d931a530 /home/blesson/cpu200/benchspec/CPU2006/459.GemsFDTD/run/run_base_test_gcc43-64bit.0000/GemsFDTD_base.gcc43-64bit
+1429610934.58: existing (run_base_test_gcc43-64bit.0000)
+1429610934.58:   Setting up 465.tonto test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/465.tonto/run/run_base_test_gcc43-64bit.0000/stdin
+1429610934.61: Comparing MD5 hashes:
+1429610934.61:   bc01a67b880d5ff1019508512c5e9304 /home/blesson/cpu200/benchspec/CPU2006/465.tonto/exe/tonto_base.gcc43-64bit
+1429610934.61:   bc01a67b880d5ff1019508512c5e9304 /home/blesson/cpu200/benchspec/CPU2006/465.tonto/run/run_base_test_gcc43-64bit.0000/tonto_base.gcc43-64bit
+1429610934.61: existing (run_base_test_gcc43-64bit.0000)
+1429610934.62:   Setting up 470.lbm test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/470.lbm/run/run_base_test_gcc43-64bit.0000/100_100_130_cf_a.of
+1429610934.62: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/470.lbm/run/run_base_test_gcc43-64bit.0000/lbm.in
+1429610934.63: Comparing MD5 hashes:
+1429610934.63:   b3f2e9b44211584dbb1d475e10dbe5b4 /home/blesson/cpu200/benchspec/CPU2006/470.lbm/exe/lbm_base.gcc43-64bit
+1429610934.63:   b3f2e9b44211584dbb1d475e10dbe5b4 /home/blesson/cpu200/benchspec/CPU2006/470.lbm/run/run_base_test_gcc43-64bit.0000/lbm_base.gcc43-64bit
+1429610934.63: existing (run_base_test_gcc43-64bit.0000)
+1429610934.63:   Setting up 481.wrf test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/GENPARM.TBL
+1429610934.63: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/LANDUSE.TBL
+1429610934.63: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/SOILPARM.TBL
+1429610934.63: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/VEGPARM.TBL
+1429610934.64: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/be/32/RRTM_DATA
+1429610934.64: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/be/64/RRTM_DATA
+1429610934.64: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/le/32/RRTM_DATA
+1429610934.65: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/le/64/RRTM_DATA
+1429610934.66: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/wrf.in
+1429610934.66: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/namelist.input
+1429610934.66: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/wrfbdy_d01
+1429610934.73: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/wrfinput_d01
+1429610934.81: Comparing MD5 hashes:
+1429610934.81:   cf547ec3bbca32319f2de2eb37d97b57 /home/blesson/cpu200/benchspec/CPU2006/481.wrf/exe/wrf_base.gcc43-64bit
+1429610934.81:   cf547ec3bbca32319f2de2eb37d97b57 /home/blesson/cpu200/benchspec/CPU2006/481.wrf/run/run_base_test_gcc43-64bit.0000/wrf_base.gcc43-64bit
+1429610934.81: existing (run_base_test_gcc43-64bit.0000)
+1429610934.82:   Setting up 482.sphinx3 test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/hmm/hub4/8gau.6000sen.quant
+1429610934.85: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/hmm/hub4/README.spec
+1429610934.85: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/hmm/hub4/hub4opensrc.6000.mdef
+1429610934.89: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/hmm/hub4/means
+1429610934.93: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/hmm/hub4/mixture_weights
+1429610934.93: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/hmm/hub4/transition_matrices
+1429610934.93: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/hmm/hub4/variances
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/LICENSE.html
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/README
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/an4.ctl
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/an4.ctl.in
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/an4.dict
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/an4.phonelist
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/an4.ug.lm
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/an4.ug.lm.DMP
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/args.an4.in
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/args.an4.test
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/filler.dict
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/pittsburgh.bigendian.raw
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/model/lm/an4/pittsburgh.littleendian.raw
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/an406-fcaw-b.be.raw
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/an406-fcaw-b.le.raw
+1429610934.98: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/an407-fcaw-b.be.raw
+1429610934.99: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/an407-fcaw-b.le.raw
+1429610934.99: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/args.an4
+1429610934.99: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/beams.dat
+1429610934.99: Comparing MD5 hashes:
+1429610934.99:   7bccde477cd77f8c07ac56c2886f58a1 /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/exe/sphinx_livepretend_base.gcc43-64bit
+1429610934.99:   7bccde477cd77f8c07ac56c2886f58a1 /home/blesson/cpu200/benchspec/CPU2006/482.sphinx3/run/run_base_test_gcc43-64bit.0000/sphinx_livepretend_base.gcc43-64bit
+1429610934.99: existing (run_base_test_gcc43-64bit.0000)
+1429610935.00:   Setting up 998.specrand test base gcc43-64bit default: Doing REALLY slow MD5 tests for /home/blesson/cpu200/benchspec/CPU2006/998.specrand/run/run_base_test_gcc43-64bit.0000/control
+1429610935.00: Comparing MD5 hashes:
+1429610935.00:   494666771321a1504c34bfa004056f2e /home/blesson/cpu200/benchspec/CPU2006/998.specrand/exe/specrand_base.gcc43-64bit
+1429610935.00:   494666771321a1504c34bfa004056f2e /home/blesson/cpu200/benchspec/CPU2006/998.specrand/run/run_base_test_gcc43-64bit.0000/specrand_base.gcc43-64bit
+1429610935.00: existing (run_base_test_gcc43-64bit.0000)
+
+1429610935.00: -----------------------------------
+1429610935.00: Running Benchmarks
+
+1429610935.01: -----------------------------------
+1429610935.01: Comparing MD5 hashes:
+1429610935.01:   de957901bf4ef6524a9e7787b6080b73 /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/exe/bwaves_base.gcc43-64bit
+1429610935.01:   de957901bf4ef6524a9e7787b6080b73 /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000/bwaves_base.gcc43-64bit
+1429610935.40: REAPER(check, ) called
+1429610935.40:   Running 410.bwaves test base gcc43-64bit default
+1429610935.41: Commands to run:
+1429610935.41:     -b numactl -m 0 --physcpubind=0
+1429610935.41:     -C /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000
+1429610935.41:     -e bwaves.err ../run_base_test_gcc43-64bit.0000/bwaves_base.gcc43-64bit (timed)
+1429610935.42: Specinvoke: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+1429610935.42: Issuing command '/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q'
+1429610935.42: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+1429610935.42: Start command: Tue Apr 21 15:38:55 2015 (1429610935)
+1429610948.99: Tee child 24335 exited with code 0 (exit code=0, signal=0)
+1429610949.00: Stop command: Tue Apr 21 15:39:08 2015 (1429610948)
+1429610949.00: Elapsed time for command: 00:00:13 (13)
+1429610949.00: specinvoke r6392
+1429610949.00:  Invoked as: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+1429610949.00: timer ticks over every 1000 ns
+1429610949.01:  Environment in effect for these runs:
+1429610949.01:  # 1: XDG_VTNR=7
+1429610949.01:  # 2: LC_PAPER=en_IN.UTF-8
+1429610949.01:  # 3: LC_ADDRESS=en_IN.UTF-8
+1429610949.01:  # 4: XDG_SESSION_ID=c2
+1429610949.01:  # 5: XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/blesson
+1429610949.01:  # 6: SELINUX_INIT=YES
+1429610949.01:  # 7: LC_MONETARY=en_IN.UTF-8
+1429610949.01:  # 8: CLUTTER_IM_MODULE=xim
+1429610949.01:  # 9: SESSION=ubuntu
+1429610949.01:  #10: GPG_AGENT_INFO=/run/user/1000/keyring-IiBKkH/gpg:0:1
+1429610949.01:  #11: TERM=xterm
+1429610949.01:  #12: VTE_VERSION=3409
+1429610949.01:  #13: XDG_MENU_PREFIX=gnome-
+1429610949.01:  #14: SHELL=/bin/bash
+1429610949.01:  #15: SPECPERLLIB=/home/blesson/cpu200/bin:/home/blesson/cpu200/bin/lib
+1429610949.01:  #16: WINDOWID=54525963
+1429610949.01:  #17: LC_NUMERIC=en_IN.UTF-8
+1429610949.02:  #18: OLDPWD=/home/blesson/cpu200
+1429610949.02:  #19: UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1731
+1429610949.02:  #20: GNOME_KEYRING_CONTROL=/run/user/1000/keyring-IiBKkH
+1429610949.02:  #21: GTK_MODULES=overlay-scrollbar:unity-gtk-module
+1429610949.02:  #22: LC_ALL=C
+1429610949.02:  #23: USER=blesson
+1429610949.02:  #24: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+1429610949.02:  #25: LC_TELEPHONE=en_IN.UTF-8
+1429610949.02:  #26: XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+1429610949.02:  #27: XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+1429610949.02:  #28: SSH_AUTH_SOCK=/run/user/1000/keyring-IiBKkH/ssh
+1429610949.02:  #29: DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+1429610949.02:  #30: SESSION_MANAGER=local/blesson-Inspiron-7420:@/tmp/.ICE-unix/1852,unix/blesson-Inspiron-7420:/tmp/.ICE-unix/1852
+1429610949.02:  #31: SPEC=/home/blesson/cpu200
+1429610949.02:  #32: XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
+1429610949.02:  #33: DESKTOP_SESSION=ubuntu
+1429610949.02:  #34: PATH=/home/blesson/cpu200/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+1429610949.02:  #35: QT_IM_MODULE=ibus
+1429610949.02:  #36: QT_QPA_PLATFORMTHEME=appmenu-qt5
+1429610949.02:  #37: LC_IDENTIFICATION=en_IN.UTF-8
+1429610949.02:  #38: PWD=/home/blesson/cpu200/config
+1429610949.02:  #39: JOB=dbus
+1429610949.02:  #40: XMODIFIERS=@im=ibus
+1429610949.02:  #41: GNOME_KEYRING_PID=1727
+1429610949.02:  #42: LANG=en_US.UTF-8
+1429610949.02:  #43: GDM_LANG=en_US
+1429610949.02:  #44: MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+1429610949.02:  #45: LC_MEASUREMENT=en_IN.UTF-8
+1429610949.02:  #46: COMPIZ_CONFIG_PROFILE=ubuntu
+1429610949.02:  #47: IM_CONFIG_PHASE=1
+1429610949.02:  #48: GDMSESSION=ubuntu
+1429610949.02:  #49: SESSIONTYPE=gnome-session
+1429610949.02:  #50: SHLVL=1
+1429610949.02:  #51: HOME=/home/blesson
+1429610949.02:  #52: XDG_SEAT=seat0
+1429610949.02:  #53: LANGUAGE=en_US:en
+1429610949.02:  #54: GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+1429610949.02:  #55: LOGNAME=blesson
+1429610949.02:  #56: COMPIZ_BIN_PATH=/usr/bin/
+1429610949.02:  #57: DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ZWJM1XHCJ8
+1429610949.02:  #58: XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/
+1429610949.02:  #59: QT4_IM_MODULE=xim
+1429610949.02:  #60: LC_LANG=C
+1429610949.02:  #61: LESSOPEN=| /usr/bin/lesspipe %s
+1429610949.02:  #62: INSTANCE=
+1429610949.02:  #63: TEXTDOMAIN=im-config
+1429610949.02:  #64: XDG_RUNTIME_DIR=/run/user/1000
+1429610949.02:  #65: DISPLAY=:0
+1429610949.02:  #66: XDG_CURRENT_DESKTOP=Unity
+1429610949.02:  #67: GTK_IM_MODULE=ibus
+1429610949.02:  #68: LESSCLOSE=/usr/bin/lesspipe %s %s
+1429610949.02:  #69: LC_TIME=en_IN.UTF-8
+1429610949.02:  #70: TEXTDOMAINDIR=/usr/share/locale/
+1429610949.02:  #71: LC_NAME=en_IN.UTF-8
+1429610949.02:  #72: XAUTHORITY=/home/blesson/.Xauthority
+1429610949.02:  #73: COLORTERM=gnome-terminal
+1429610949.02:  #74: _=/home/blesson/cpu200/bin/runspec
+1429610949.02:  #75: SPECDB_PWD=/home/blesson/cpu200/config
+1429610949.02: running commands in speccmds.cmd 1 times
+1429610949.02: runs started at 1429610935, 420833000, Tue Apr 21 15:38:55 2015
+1429610949.02: run 1 started at 1429610935, 420896000, Tue Apr 21 15:38:55 2015
+1429610949.02: child started: 0, 1429610935, 420913000, pid=24336, '../run_base_test_gcc43-64bit.0000/bwaves_base.gcc43-64bit'
+1429610949.02: child finished: 0, 1429610940, 993576000, sec=5, nsec=572663000, pid=24336, rc=0
+1429610949.02: Workload elapsed time (0:1) = 5.572663 seconds
+1429610949.02: run 1 finished at: 1429610940, 993581000, Tue Apr 21 15:39:00 2015
+1429610949.02: run 1 elapsed time: 5, 572685000, 5.572685000
+1429610949.02: runs finished at 1429610940, 993619000, Tue Apr 21 15:39:00 2015
+1429610949.02: runs elapsed time: 5, 572786000, 5.572786000
+1429610949.02: Copy 0 of 410.bwaves (base test) run 1 finished at Tue Apr 21 15:39:00 2015.  Total elapsed time: 5.572663
+1429610949.02: comparing files in '/home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000'
+1429610949.02: comparing 'bwaves.out' with abstol=1e-16, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+1429610949.02: comparing 'bwaves2.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=0.015, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+1429610949.02: comparing 'bwaves3.out' with abstol=, binary=, calctol=0, cw=, floatcompare=, ignorecase=, obiwan=, reltol=1e-06, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+1429610949.02: Specinvoke: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+1429610949.02: Issuing command '/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd'
+1429610949.02: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/410.bwaves/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+1429610949.02: Start command: Tue Apr 21 15:39:09 2015 (1429610949)
+1429610950.43: Tee child 24341 exited with code 0 (exit code=0, signal=0)
+1429610950.43: Stop command: Tue Apr 21 15:39:10 2015 (1429610950)
+1429610950.43: Elapsed time for command: 00:00:01 (1)
+1429610950.43: Benchmark Times:
+1429610950.43:   Start:    Tue Apr 21 15:38:55 2015 (1429610935)
+1429610950.43:   Stop:     Tue Apr 21 15:39:08 2015 (1429610948)
+1429610950.43:   Elapsed:  00:00:13 (13)
+1429610950.43:   Reported: 5 572786000 5.572786
+1429610950.43:  Success 410.bwaves base test ratio=-0.00, runtime=5.572786, power=0.00w, temp=0.00 deg, humidity=0.00%
+
+1429610950.43: -----------------------------------
+1429610950.50: Comparing MD5 hashes:
+1429610950.50:   ac62ae5bbb5cd76c35fd4a8b3ece1d7c /home/blesson/cpu200/benchspec/CPU2006/416.gamess/exe/gamess_base.gcc43-64bit
+1429610950.50:   ac62ae5bbb5cd76c35fd4a8b3ece1d7c /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000/gamess_base.gcc43-64bit
+1429610950.50: REAPER(check, ) called
+1429610950.50:   Running 416.gamess test base gcc43-64bit default
+1429610950.51: Commands to run:
+1429610950.51:     -b numactl -m 0 --physcpubind=0
+1429610950.51:     -C /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000
+1429610950.51:     -i exam29.config -o exam29.out -e exam29.err ../run_base_test_gcc43-64bit.0000/gamess_base.gcc43-64bit (timed)
+1429610950.51: Specinvoke: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+1429610950.51: Issuing command '/home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q'
+1429610950.51: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+1429610950.51: Start command: Tue Apr 21 15:39:10 2015 (1429610950)
+1429610950.80: Tee child 24350 exited with code 0 (exit code=0, signal=0)
+1429610950.80: Stop command: Tue Apr 21 15:39:10 2015 (1429610950)
+1429610950.80: Elapsed time for command: 00:00:00 (0)
+1429610950.80: specinvoke r6392
+1429610950.80:  Invoked as: /home/blesson/cpu200/bin/specinvoke -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -e speccmds.err -o speccmds.stdout -f speccmds.cmd -C -q
+1429610950.80: timer ticks over every 1000 ns
+1429610950.82:  Environment in effect for these runs:
+1429610950.82:  # 1: XDG_VTNR=7
+1429610950.82:  # 2: LC_PAPER=en_IN.UTF-8
+1429610950.82:  # 3: LC_ADDRESS=en_IN.UTF-8
+1429610950.82:  # 4: XDG_SESSION_ID=c2
+1429610950.82:  # 5: XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/blesson
+1429610950.82:  # 6: SELINUX_INIT=YES
+1429610950.82:  # 7: LC_MONETARY=en_IN.UTF-8
+1429610950.82:  # 8: CLUTTER_IM_MODULE=xim
+1429610950.82:  # 9: SESSION=ubuntu
+1429610950.82:  #10: GPG_AGENT_INFO=/run/user/1000/keyring-IiBKkH/gpg:0:1
+1429610950.82:  #11: TERM=xterm
+1429610950.82:  #12: VTE_VERSION=3409
+1429610950.82:  #13: XDG_MENU_PREFIX=gnome-
+1429610950.82:  #14: SHELL=/bin/bash
+1429610950.82:  #15: SPECPERLLIB=/home/blesson/cpu200/bin:/home/blesson/cpu200/bin/lib
+1429610950.82:  #16: WINDOWID=54525963
+1429610950.82:  #17: LC_NUMERIC=en_IN.UTF-8
+1429610950.82:  #18: OLDPWD=/home/blesson/cpu200
+1429610950.82:  #19: UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1731
+1429610950.82:  #20: GNOME_KEYRING_CONTROL=/run/user/1000/keyring-IiBKkH
+1429610950.82:  #21: GTK_MODULES=overlay-scrollbar:unity-gtk-module
+1429610950.82:  #22: LC_ALL=C
+1429610950.82:  #23: USER=blesson
+1429610950.82:  #24: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+1429610950.82:  #25: LC_TELEPHONE=en_IN.UTF-8
+1429610950.82:  #26: XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+1429610950.82:  #27: XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+1429610950.82:  #28: SSH_AUTH_SOCK=/run/user/1000/keyring-IiBKkH/ssh
+1429610950.82:  #29: DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+1429610950.82:  #30: SESSION_MANAGER=local/blesson-Inspiron-7420:@/tmp/.ICE-unix/1852,unix/blesson-Inspiron-7420:/tmp/.ICE-unix/1852
+1429610950.82:  #31: SPEC=/home/blesson/cpu200
+1429610950.82:  #32: XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
+1429610950.82:  #33: DESKTOP_SESSION=ubuntu
+1429610950.82:  #34: PATH=/home/blesson/cpu200/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+1429610950.82:  #35: QT_IM_MODULE=ibus
+1429610950.82:  #36: QT_QPA_PLATFORMTHEME=appmenu-qt5
+1429610950.82:  #37: LC_IDENTIFICATION=en_IN.UTF-8
+1429610950.82:  #38: PWD=/home/blesson/cpu200/config
+1429610950.82:  #39: JOB=dbus
+1429610950.82:  #40: XMODIFIERS=@im=ibus
+1429610950.82:  #41: GNOME_KEYRING_PID=1727
+1429610950.82:  #42: LANG=en_US.UTF-8
+1429610950.82:  #43: GDM_LANG=en_US
+1429610950.82:  #44: MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+1429610950.82:  #45: LC_MEASUREMENT=en_IN.UTF-8
+1429610950.82:  #46: COMPIZ_CONFIG_PROFILE=ubuntu
+1429610950.82:  #47: IM_CONFIG_PHASE=1
+1429610950.82:  #48: GDMSESSION=ubuntu
+1429610950.82:  #49: SESSIONTYPE=gnome-session
+1429610950.82:  #50: SHLVL=1
+1429610950.82:  #51: HOME=/home/blesson
+1429610950.82:  #52: XDG_SEAT=seat0
+1429610950.82:  #53: LANGUAGE=en_US:en
+1429610950.82:  #54: GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+1429610950.82:  #55: LOGNAME=blesson
+1429610950.82:  #56: COMPIZ_BIN_PATH=/usr/bin/
+1429610950.82:  #57: DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ZWJM1XHCJ8
+1429610950.82:  #58: XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/
+1429610950.82:  #59: QT4_IM_MODULE=xim
+1429610950.82:  #60: LC_LANG=C
+1429610950.82:  #61: LESSOPEN=| /usr/bin/lesspipe %s
+1429610950.82:  #62: INSTANCE=
+1429610950.82:  #63: TEXTDOMAIN=im-config
+1429610950.82:  #64: XDG_RUNTIME_DIR=/run/user/1000
+1429610950.82:  #65: DISPLAY=:0
+1429610950.82:  #66: XDG_CURRENT_DESKTOP=Unity
+1429610950.82:  #67: GTK_IM_MODULE=ibus
+1429610950.82:  #68: LESSCLOSE=/usr/bin/lesspipe %s %s
+1429610950.83:  #69: LC_TIME=en_IN.UTF-8
+1429610950.83:  #70: TEXTDOMAINDIR=/usr/share/locale/
+1429610950.83:  #71: LC_NAME=en_IN.UTF-8
+1429610950.83:  #72: XAUTHORITY=/home/blesson/.Xauthority
+1429610950.83:  #73: COLORTERM=gnome-terminal
+1429610950.83:  #74: _=/home/blesson/cpu200/bin/runspec
+1429610950.83:  #75: SPECDB_PWD=/home/blesson/cpu200/config
+1429610950.83: running commands in speccmds.cmd 1 times
+1429610950.83: runs started at 1429610950, 516468000, Tue Apr 21 15:39:10 2015
+1429610950.83: run 1 started at 1429610950, 516563000, Tue Apr 21 15:39:10 2015
+1429610950.83: child started: 0, 1429610950, 516581000, pid=24351, '../run_base_test_gcc43-64bit.0000/gamess_base.gcc43-64bit'
+1429610950.83: child finished: 0, 1429610950, 546427000, sec=0, nsec=29846000, pid=24351, rc=0
+1429610950.83: Workload elapsed time (0:1) = 0.029846 seconds
+1429610950.83: run 1 finished at: 1429610950, 546436000, Tue Apr 21 15:39:10 2015
+1429610950.83: run 1 elapsed time: 0, 29873000, 0.029873000
+1429610950.83: runs finished at 1429610950, 546489000, Tue Apr 21 15:39:10 2015
+1429610950.83: runs elapsed time: 0, 30021000, 0.030021000
+1429610950.83: Copy 0 of 416.gamess (base test) run 1 finished at Tue Apr 21 15:39:10 2015.  Total elapsed time: 0.029846
+1429610950.83: comparing files in '/home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000'
+1429610950.83: comparing 'exam29.out' with abstol=1e-05, binary=, calctol=0, cw=, floatcompare=, ignorecase=1, obiwan=, reltol=0.0001, skipabstol=, skipobiwan=, skipreltol=, skiptol=
+1429610950.83: Specinvoke: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+1429610950.83: Issuing command '/home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd'
+1429610950.83: /home/blesson/cpu200/bin/specinvoke -E -d /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000 -c 1 -e compare.err -o compare.stdout -f compare.cmd
+1429610950.83: Start command: Tue Apr 21 15:39:10 2015 (1429610950)
+1429610951.48: Tee child 24353 exited with code 256 (exit code=1, signal=0)
+1429610951.48: Stop command: Tue Apr 21 15:39:11 2015 (1429610951)
+1429610951.48: Elapsed time for command: 00:00:01 (1)
+
+1429610951.49: ****************************************
+1429610951.49: Contents of exam29.err
+1429610951.49: ****************************************
+1429610951.49: STOP IN ABRT
+
+1429610951.49: ****************************************
+
+1429610951.49: *** Miscompare of exam29.out; for details see
+1429610951.49:     /home/blesson/cpu200/benchspec/CPU2006/416.gamess/run/run_base_test_gcc43-64bit.0000/exam29.out.mis
+1429610951.49: 0423:     1  0  0     -228.438026762  -228.438026762   0.585016182   0.000000000
+1429610951.49:           1  0  0     -228.438026762  -228.438026762   2.057216987   0.000000000
+1429610951.49:                                                                  ^
+1429610951.49: 0424:            ---------------START SECOND ORDER SCF---------------
+1429610951.49:           2  1  0      -13.398272306   215.039754456   0.019611730   2.138165837
+1429610951.49:        ^
+1429610951.49: 0425:     2  1  0     -228.975183270    -0.537156507   0.141897260   0.111481465
+1429610951.49:                  ---------------START SECOND ORDER SCF---------------
+1429610951.49:        ^
+1429610951.49: 0426:     3  2  0     -229.014081256    -0.038897986   0.064028396   0.079634004
+1429610951.49:           3  2  0      -13.404086244    -0.005813938   0.000644098   0.008801378
+1429610951.49:                                    ^
+1429610951.49: 0427:     4  3  0     -229.036210679    -0.022129423   0.025840433   0.007697238
+1429610951.49:           4  3  0      -13.404093666    -0.000007422   0.000028154   0.000448854
+1429610951.49:                                    ^
+1429610951.49: 0428:     5  4  0     -229.036777024    -0.000566345   0.008639408   0.001874192
+1429610951.49:           5  4  0      -13.404093683    -0.000000017   0.000000370   0.000004470
+1429610951.49:                                    ^
+1429610951.49: 0429:     6  5  0     -229.036824895    -0.000047871   0.001734717   0.000979860
+1429610951.49:           6  5  0      -13.404093683    -0.000000000   0.000000008   0.000000051
+1429610951.49:                                    ^
+1429610951.49: 0431:     7  6  0     -229.036831711    -0.000006816   0.000315932   0.000297576
+1429610951.49:                  -----------------
+1429610951.49:        ^
+1429610951.49: 0432:     8  7  0     -229.036832335    -0.000000624   0.000112760   0.000083271
+1429610951.49:                  DENSITY CONVERGED
+1429610951.49:        ^
+1429610951.49: 0433:     9  8  0     -229.036832426    -0.000000092   0.000074046   0.000042607
+1429610951.49:                  -----------------
+1429610951.49:        ^
+1429610951.49: Benchmark Times:
+1429610951.49:   Start:    Tue Apr 21 15:39:10 2015 (1429610950)
+1429610951.49:   Stop:     Tue Apr 21 15:39:10 2015 (1429610950)
+1429610951.49:   Elapsed:  00:00:00 (0)
+1429610951.49:   Reported: 0 30021000 0.030021
+1429610951.49:  Error 416.gamess base test ratio=-0.00, runtime=0.030021, power=0.00w, temp=0.00 deg, humidity=0.00%
+1429610951.49: Invalid run; unable to continue.
+
+1429610951.50: The log for this run is in /home/blesson/cpu200/result/CPU2006.008.log
+1429610951.50: The debug log for this run is in /home/blesson/cpu200/result/CPU2006.008.log.debug
+
+1429610951.50: *
+1429610951.50: * Temporary files were NOT deleted; keeping temporaries such as
+1429610951.51: * /home/blesson/cpu200/result/CPU2006.008.log.debug and
+1429610951.51: * /home/blesson/cpu200/tmp/CPU2006.008
+1429610951.51: * (These may be large!)
+1429610951.51: *
+1429610951.51: runspec finished at Tue Apr 21 15:39:11 2015; 25 total seconds elapsed
